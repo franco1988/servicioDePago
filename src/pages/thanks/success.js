@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Message } from '../../ui/components'
 import { Button } from '../../ui/core'
+import { getLayout } from '../../layouts'
 
 export default function ThanksSuccessPage() {
   return (
@@ -12,3 +13,5 @@ export default function ThanksSuccessPage() {
     />
   )
 }
+
+ThanksSuccessPage.getLayout = getLayout

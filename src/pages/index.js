@@ -4,6 +4,7 @@ import { Elements } from '@stripe/react-stripe-js'
 import { useStripeClientSecret, useStripePromise } from '../lib/stripe'
 import { Button, Divider } from '../ui/core'
 import { PayForm } from '../ui/components'
+import { getLayout } from '../layouts'
 
 export default function IndexPage({checkoutUrl}) {
   const stripeClientSecret = useStripeClientSecret()
@@ -14,7 +15,7 @@ export default function IndexPage({checkoutUrl}) {
 
   return (
     <div className="flex">
-      <div className="flex space-x-20 mx-auto py-32">
+      <div className="flex space-x-20 mx-auto">
         <div className="flex flex-col w-[592px]">
           <h2 className="mb-6 text-2xl font-bold">Confirm and pay</h2>
           <a href={checkoutUrl}>
@@ -92,6 +93,8 @@ export default function IndexPage({checkoutUrl}) {
     </div>
   )
 }
+
+IndexPage.getLayout = getLayout
 
 export async function getServerSideProps() {
   const isProd = process.env.NODE_ENV === 'production'
