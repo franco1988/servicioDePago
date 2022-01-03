@@ -11,6 +11,7 @@ export function PayForm(){
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const URL = process.env.NEXT_PUBLIC_BASE_URL
 
     if(!stripe || !elements){
       return 
@@ -21,7 +22,7 @@ export function PayForm(){
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: 'http://localhost:3000/thanks/success'
+        return_url: `${URL}thanks/success`
       },
     })
     // This point will only be reached if there is an immediate error when

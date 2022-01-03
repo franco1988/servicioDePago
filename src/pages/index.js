@@ -10,9 +10,6 @@ export default function IndexPage({checkoutUrl}) {
   const stripeClientSecret = useStripeClientSecret()
   const stripePromise = useStripePromise()
 
-  console.log(stripeClientSecret)
-  console.log(stripePromise)
-
   return (
     <div className="flex">
       <div className="flex space-x-20 mx-auto">
@@ -97,8 +94,8 @@ export default function IndexPage({checkoutUrl}) {
 IndexPage.getLayout = getLayout
 
 export async function getServerSideProps() {
-  const isProd = process.env.NODE_ENV === 'production';
-  const URL = process.env.NEXT_PUBLIC_BASE_URL;
+  const isProd = process.env.NODE_ENV === 'production'
+  const URL = process.env.NEXT_PUBLIC_BASE_URL
 
   mercadopago.configure({
     access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
