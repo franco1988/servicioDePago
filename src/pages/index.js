@@ -98,6 +98,7 @@ IndexPage.getLayout = getLayout
 
 export async function getServerSideProps() {
   const isProd = process.env.NODE_ENV === 'production'
+  const URL = process.env.NEXT_PUBLIC_BASE_URL
 
   mercadopago.configure({
     access_token: process.env.MERCADO_PAGO_ACCESS_TOKEN,
@@ -115,8 +116,8 @@ export async function getServerSideProps() {
     ],
     external_reference: '00000001',
     back_urls: {
-      failure: `${process.env.NEXT_PUBLIC_BASE_URL}thanks/failure`,
-      success: `${process.env.NEXT_PUBLIC_BASE_URL}thanks/success`,
+      failure: `${URL}thanks/failure`,
+      success: `${URL}thanks/success`,
     },
     binary_mode: true,
   })
