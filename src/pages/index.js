@@ -29,7 +29,7 @@ export default function IndexPage({checkoutUrl}) {
             </Button>
           </a>
           <div className="flex justify-center">
-            <a href="https://www.mercadopago.com.ar/developers/es/guides/online-payments/checkout-pro/test-integration" target="_blank">
+            <a href="https://www.mercadopago.com.ar/developers/es/guides/online-payments/checkout-pro/test-integration" target="_blank" rel="noreferrer">
               <Button className="bg-mercadopago my-3">Credit Cards for test in Mercado Pago</Button>
             </a>
           </div>
@@ -53,7 +53,7 @@ export default function IndexPage({checkoutUrl}) {
             )
           }
           <div className="flex justify-center">
-            <a href="https://stripe.com/docs/testing" target="_blank">
+            <a href="https://stripe.com/docs/testing" target="_blank" rel="noreferrer">
               <Button className="bg-primary my-3">Credit cards for Stripe trial</Button>
             </a>
           </div>
